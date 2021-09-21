@@ -1,8 +1,10 @@
 import axios from 'axios'
-import React, { useState, useHistory } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { isEmpty,isEmail,isLength,isMatch } from './validate'
 import { showErrorMessage, showSuccessMessage } from './Notification'
+import { useHistory } from 'react-router'
+
 const initialState = {
     name: "",
     email: "",
@@ -43,7 +45,7 @@ const Registration = () => {
         try {
             const res = await axios.post('/api/users/register', { name, email, password })
             setUser({...user, err: "", success: res.data.msg})
-            history.push("/login")
+            history.push()
             console.log(res);
             
             
