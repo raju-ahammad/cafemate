@@ -1,0 +1,94 @@
+
+.work__form h2.workpost__title {
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.work__form form {
+    box-shadow: 0px 0px 16px #aba8a8;
+    padding: 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.work__form form .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 4%;
+}
+.work__form form .form-group label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 5%;
+    display: inline-block;
+    width: 15%;
+}
+.work__form form .form-group input {
+    width: 85%;
+    padding: 1% 5px;
+    font-size: 16px;
+}
+
+button.btn {
+    width: 63%;
+    margin: auto;
+    border: none;
+    padding: 1.5% 0;
+    background: linear-gradient(
+90deg
+, rgba(65,133,219,1) 0%, rgba(43,76,204,1) 50%, rgba(0,212,255,1) 100%);
+    color: #f1f1f1;
+}
+
+.work__form form input#image {
+    box-shadow: 0px 0px 2px black;
+}
+
+.dashBoard__wrapper {
+    display: flex;
+    
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  
+  .work__form {
+    padding: 5% 5% 0;
+    width: 68%;
+  }
+
+textarea#desc {
+    width: 85%;
+    height: 100px;
+}
+
+.dashboard__content {
+    width: 70%;
+}
+
+
+  .post__list {
+    width: 70%;
+    padding: 9% 5% 0;
+}
+
+.delete__action {
+    cursor: pointer;
+}
+
+.create__post__btn {
+    margin-bottom: 5%;
+}
+
+.create__post__btn a {
+    text-decoration: none;
+    background: linear-gradient( 90deg, rgba(65,133,219,1) 0%, rgba(43,76,204,1) 50%, rgba(0,212,255,1) 100%);
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 18px;
+    margin-bottom: 5%;
+    border-radius: 3px;
+    font-family: Montserrat;
+}

@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.36b28e4a.chunk.css",
+    "main.js": "/static/js/main.8a6ba690.chunk.js",
+    "main.js.map": "/static/js/main.8a6ba690.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7545a8a1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7545a8a1.js.map",
+    "static/js/2.c8de577b.chunk.js": "/static/js/2.c8de577b.chunk.js",
+    "static/js/2.c8de577b.chunk.js.map": "/static/js/2.c8de577b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.36b28e4a.chunk.css.map": "/static/css/main.36b28e4a.chunk.css.map",
+    "static/js/2.c8de577b.chunk.js.LICENSE.txt": "/static/js/2.c8de577b.chunk.js.LICENSE.txt",
+    "static/media/CompayHome.9f1e182b.png": "/static/media/CompayHome.9f1e182b.png",
+    "static/media/CompayHome2.ca493893.png": "/static/media/CompayHome2.ca493893.png",
+    "static/media/Logo.6b3e6e75.png": "/static/media/Logo.6b3e6e75.png",
+    "static/media/LogoBlack.93b806e0.png": "/static/media/LogoBlack.93b806e0.png",
+    "static/media/background.b5c5f3a7.mp4": "/static/media/background.b5c5f3a7.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7545a8a1.js",
+    "static/js/2.c8de577b.chunk.js",
+    "static/css/main.36b28e4a.chunk.css",
+    "static/js/main.8a6ba690.chunk.js"
+  ]
+}
