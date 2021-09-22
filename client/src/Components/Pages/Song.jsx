@@ -1,74 +1,70 @@
-import React, { useContext } from 'react'
+import axios from 'axios';
+import { load } from 'dotenv';
+import React, { useContext, useEffect, useState } from 'react'
 import { Redirect } from 'react-router';
 import { MyContext } from '../../App';
+import SongCard from './SongCard';
+import SongrequestForm from './SongrequestForm';
+
+const url = "/api/events/songs"
 
 const Song = () => {
+  const [songList, setSongList] = useState([])
+  
   const context = useContext(MyContext)
-  const { token } = context;
+  const { token, loading, setLoading } = context;
+
+  const fetchSongData = async () => {
+    try {
+      const res = await axios.get(url);
+      console.log(res);
+      setLoading(false)
+      setSongList(res.data);
+    } catch (error) {
+      
+    }
+  }
+
+  useEffect(() => {
+   fetchSongData()
+  }, [])
+
   return (
     <>
+    
     {!token ? <Redirect to="/login"/> :
     <div className="container">
       <h2 className="mt-5">Song Request</h2>
       <hr/>
-      <div className="row">
-        <div className="col-sm-2"></div>
-        <div className="col-sm-6">
-          <div className="song__request bg-primary text-light">
-            <p className="p-2">Place a song request</p>
-          </div>
-          <div className="form">
-            <form>
-              <div class="form-group py-2">
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Song Name" />
-            
-              </div>
-              <div class="form-group py-2">
+      {
+        loading ? <div>Loading ....</div>:
+        songList.map((song, index) => (
+          <div className="row">
+              <div className="col-sm-2"></div>
+              <div className="col-sm-6">
+                <div className="song__request bg-primary text-light">
+                  <p className="p-2">Place a song request</p>
+                </div>
                 
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Artist" />
-              </div>
-              
-              <button type="submit" class="btn btn-primary">Submit Request</button>
-            </form>
-          </div>
-          <div className="bg-warning my-4">
-            <p className="p-2 text-light">Songs to be played</p>
-          </div>
-          <div className="card__container">
-            <div className="card bg-primary">
-              <div className="row p-3 text-white">
-                <div className="col-8">
-                  <h3> I'm On</h3>
-                  <p>Artist: Paul and Mary, Peter</p>
-                  <p>Requested by Abdullah</p>
-                </div>
-                <div className="col-4">
-                  <small>5 minutes ago</small>
-                  <p>Upvote</p>
-                </div>
+                <SongrequestForm/>
 
-              </div>
+                <div className="bg-warning my-4">
+                  <p className="p-2 text-light">Songs to be played</p>
+                </div>
+                <div className="card__container">
+                  
+                  <SongCard title={song.title} artist={song.artist}/>
+
+                </div>
             </div>
-
-            <div className="card">
-              <div className="row p-3">
-                <div className="col-8">
-                  <h3> I'm On</h3>
-                  <p>Artist: Paul and Mary, Peter</p>
-                  <p>Requested by Abdullah</p>
-                </div>
-                <div className="col-4">
-                  <small>5 minutes ago</small>
-                  <p>Upvote</p>
-                </div>
-
-              </div>
-            </div>
-
+            
+            <div className="col-sm-4"></div>
           </div>
-      </div>
-      <div className="col-sm-4"></div>
-      </div>
+        ))
+        
+      
+      }
+      
     </div>
 }
     </>

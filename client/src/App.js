@@ -10,7 +10,7 @@ export const MyContext = createContext({});
 function App() {
   const [value, setValue] = useState("closeBtn")
   const [close, setClose] = useState("")
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const { token, setToken } = useToken();
 
   const logout = () => {

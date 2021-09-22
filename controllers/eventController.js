@@ -4,7 +4,7 @@ const EventController = {
 
     getAllEvent: async (req, res) => {
         try {
-            const event = await Events.find().populate('song').sort({ createdAt: 1})
+            const event = await Events.find().sort({ createdAt: 'desc'}).populate('song');
             return res.status(200).json(event)
         } 
         catch (err) {
