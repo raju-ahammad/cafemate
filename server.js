@@ -24,6 +24,10 @@ require("./utils/passport")(passport);
 
 app.use('/api', require('./routes/imageUploadRoute'))
 app.use('/api/users', require('./routes/userRoute'))
+app.use('/api', require('./routes/songRoute'))
+app.use('/api', require('./routes/commentsRoute'))
+
+
 
 // *************** connect mongodb **********************
 
