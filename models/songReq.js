@@ -11,6 +11,14 @@ const songSchema = new mongoose.Schema({
    trim: true,
    required: true
  },
+ user: {
+  type: String,
+  trim: true
+},
+isFinished: {
+  type: Number,
+  default: 0
+},
   
   events: {
     type: mongoose.Schema.Types.ObjectId,

@@ -20,7 +20,7 @@ const userController = {
               name: req.body.name,
               email: req.body.email,
               password: req.body.password
-            });
+            }); 
             console.log(newUser);
       // Hash password before saving in database
             bcrypt.genSalt(10, (err, salt) => {
@@ -40,22 +40,23 @@ const userController = {
   
       const email = req.body.email;
       const password = req.body.password;
-      // Find user by email
+      
         User.findOne({ email }).then(user => {
-          // Check if user exists
+          
           if (!user) {
             return res.status(404).json({ emailnotfound: "Email not found" });
           }
-      // Check password
+      
           bcrypt.compare(password, user.password).then(isMatch => {
             if (isMatch) {
-              // User matched
-              // Create JWT Payload
+              
               const payload = {
                 id: user.id,
-                name: user.name
+                name: user.name,
+                isadmin: user.isadmin,
+                isartist: user.isartist
               };
-            // Sign token
+            
               jwt.sign(
                 payload,
                 keys,
@@ -66,7 +67,8 @@ const userController = {
                   res.json({
                     msg: "Sucessfully Login",
                     success: true,
-                    token: "Bearer " + token
+                    token: "Bearer " + token,
+                    user: payload
                   });
                 }
               );

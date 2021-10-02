@@ -18,8 +18,8 @@ const Login = () => {
     const {email, password,err, success } = user
 
     const context = useContext(MyContext)
-    const { setToken } = context
-
+    const { setToken, setUserName, setisAdmin ,setisArtist } = context
+    console.log("Context", context);
     let history = useHistory();
 
     const userHandleChange = (e) => {
@@ -40,6 +40,10 @@ const Login = () => {
             
             setUser({...user})
             setToken(res.data.token)
+            setUserName(res.data.user.name)
+            setisAdmin(res.data.user.isadmin)
+            setisArtist(res.data.user.isartist)
+            console.log(res.data.user);
             history.push("/")
             console.log(res);
             
@@ -63,15 +67,13 @@ const Login = () => {
                 { success && showSuccessMessage(success) }
                 <form className="form p-4" onSubmit={onHandleSubmit}>
                     <div className="form-group row">
-                        <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
-                        <div className="col-sm-8">
+                        <div className="col-sm-12">
                             <input onChange={userHandleChange} type="email" value={email} name="email" className="form-control" id="email" placeholder="Enter Your Email" />
                         </div>
                     </div>
 
                     <div className="form-group row mt-2">
-                        <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
-                        <div className="col-sm-8">
+                        <div className="col-sm-12">
                             <input onChange={userHandleChange} type="password" value={password} name="password" className="form-control" id="password" placeholder="Password" />
                         </div>
                     </div>

@@ -45,7 +45,8 @@ const Registration = () => {
         try {
             const res = await axios.post('/api/users/register', { name, email, password })
             setUser({...user, err: "", success: res.data.msg})
-            history.push()
+            history.push("/login")
+            setUser(initialState)
             console.log(res);
             
             
@@ -69,27 +70,23 @@ const Registration = () => {
                 { success && showSuccessMessage(success) }
                 <form className="form p-4" onSubmit={ onHandleSubmit } >
                 <div className="form-group row mt-2">
-                    <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
-                    <div className="col-sm-8">
+                    <div className="col-sm-12">
                         <input onChange={userHandleChange} type="name" value={name} name="name" className="form-control" id="name" placeholder="Enter Your Name" />
                     </div>
                 </div>
                 <div className="form-group row mt-2">
-                    <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
-                    <div className="col-sm-8">
+                    <div className="col-sm-12">
                         <input onChange={userHandleChange} type="email" value={email} name="email" className="form-control" id="email" placeholder="Enter Your Email" />
                     </div>
                 </div>
 
                 <div className="form-group row mt-2">
-                    <label htmlFor="password" className="col-sm-2 col-form-label">Password</label>
-                    <div className="col-sm-8">
+                    <div className="col-sm-12">
                         <input onChange={userHandleChange} type="password" value={password} name="password" className="form-control" id="password" placeholder="Password" />
                     </div>
                 </div>
                 <div className="form-group row mt-2">
-                    <label htmlFor="password2" className="col-sm-2 col-form-label">Confirmed Password</label>
-                    <div className="col-sm-8">
+                    <div className="col-sm-12">
                         <input onChange={userHandleChange} type="password" value={password2} name="password2" className="form-control" id="cf_password" placeholder="Re Enter Password" />
                     </div>
                 </div>

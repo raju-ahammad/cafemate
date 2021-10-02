@@ -68,3 +68,27 @@ li {
 img {
   width: 100%;
 }
+a {
+  text-decoration: none;
+}
+
+.home__card {
+  min-height: 195px;
+}
+
+img {
+  width: 100%;
+}
+
+.card__landing {
+  position: relative;
+}
+.banner__text {
+  position: absolute;
+  top: 18%;
+  left: 7%;
+}
+
+.landing__btn:hover {
+  color: black !important;
+}

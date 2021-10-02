@@ -12,6 +12,14 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    isadmin: {
+        type: Number,
+        default: 0 // 0 = user , 1 = admin
+    },
+    isartist: {
+        type: Number,
+        default: 0 // 0 = user , 1 = admin
     }
 },
 {
