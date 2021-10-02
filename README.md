@@ -1,4 +1,4 @@
-# MERN Stack - Dougact
+# MERN Stack - Cafemate
 
 ## Author: Raju Ahammad
 
