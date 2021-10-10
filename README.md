@@ -8,7 +8,7 @@
 
 ## Install dependencies for client
 
-### cd client ---> `npm install`
+
 
 ## Connect to your mongodb and add info in .env
 
